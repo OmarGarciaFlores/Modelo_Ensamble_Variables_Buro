@@ -4,7 +4,7 @@
 Este proyecto desarrolla una arquitectura integral para evaluar el **riesgo crediticio** a partir de variables de buró de crédito, utilizando técnicas de machine learning avanzadas como **XGBoost** y un modelo **ensamble**, todo desplegado en un ecosistema basado en **AWS** y **BigQuery**. El resultado es un sistema escalable que permite predicciones automatizadas y visualización continua del riesgo mediante **Looker Studio**.
 
 
-## Objetivo del Proyecto
+# Objetivo del Proyecto
 
 Anticipar el **riesgo de incumplimiento crediticio** mediante modelos predictivos construidos sobre más de 180 variables de buró y comportamiento histórico. Esto permitirá a la institución:
 
@@ -14,12 +14,17 @@ Anticipar el **riesgo de incumplimiento crediticio** mediante modelos predictivo
 - Visualizar el riesgo de forma dinámica y granular.
 
 
+# Arquitectura del proyecto
+
+![Arquitectura del Proyecto](Arquitectura.png)
+
+
 # Estructura del Proyecto
 
 ![Estructura del Proyecto](estructura.png)
 
 
-## Requisitos
+# Requisitos
 
 ```bash
 pip install pandas boto3 scikit-learn xgboost joblib pandas-gbq google-auth
