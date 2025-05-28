@@ -16,11 +16,37 @@ Anticipar el **riesgo de incumplimiento crediticio** mediante modelos predictivo
 
 # Estructura del Proyecto
 
-├── data/ # Archivos CSV de entrada y salida local
-├── modelos/ # Modelos entrenados guardados en formato .sav
-├── notebooks/ # Notebooks para exploración, entrenamiento y validación
-├── src/ # Scripts Python para ETL y automatización
-└── README.md
+.
+├── credenciales.json
+├── data
+│   ├── catalogo.csv
+│   ├── columnas_buro.csv
+│   ├── credit_activity.csv
+│   ├── credit_utilization.csv
+│   ├── delinquency.csv
+│   ├── installment.csv
+│   ├── predicciones.csv
+│   └── revolving.csv
+├── modelos
+│   ├── modelo_credit_activity.sav
+│   ├── modelo_credit_utilization.sav
+│   ├── modelo_delinquency.sav
+│   ├── modelo_ensamble.sav
+│   ├── modelo_installment.sav
+│   └── modelo_revolving.sav
+├── notebooks
+│   └── elt.ipynb
+├── Presentacion_v2.pdf
+├── README.md
+└── src
+    ├── bigquery.py
+    ├── cargar_bases.py
+    ├── creacion_tbls_athena.py
+    ├── glue.py
+    ├── predicciones.py
+    └── transformacion_athena.py
+
+5 directories, 24 files
 
 
 ## Requisitos
