@@ -16,7 +16,7 @@ Anticipar el **riesgo de incumplimiento crediticio** mediante modelos predictivo
 
 # Estructura del Proyecto
 
-image.png
+![Estructura del Proyecto](estructura.png)
 
 
 ## Requisitos
