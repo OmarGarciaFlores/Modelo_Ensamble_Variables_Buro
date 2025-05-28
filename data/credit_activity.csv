@@ -1,0 +1,15 @@
+ID,Variable,Categoria
+S011,Number_of_open_trades,credit_activity
+AT07,Number_of_trades_opened_in_past_12_months,credit_activity
+AT09,Number_of_trades_opened_in_past_24_months,credit_activity
+AT20,Months_since_oldest_account_opened,credit_activity
+AT21,Months_since_most_recent_account_opened,credit_activity
+AT29,Number_of_trades_with_current_balance_balance_greater_than_0,credit_activity
+G104,Months_on_file,credit_activity
+G096,Number_of_inquiries,credit_activity
+G102,Months_since_most_recent_inquiry,credit_activity
+G103,Months_since_most_recent_activity,credit_activity
+AT01,Number_of_trades,credit_activity
+CTE,CLIENTEID,otros
+MES,MES_INFORMACION,otros
+TAR,EVER30_12M,otros
