@@ -1,7 +1,17 @@
 
 # Análisis de Riesgo de Crédito con Variables de Buró
 
-Este proyecto implementa una arquitectura para analizar el riesgo crediticio utilizando información de buró, desde la recolección y transformación de datos hasta el entrenamiento y evaluación de modelos predictivos. El flujo está diseñado para integrarse con AWS (S3, Athena, Glue) y herramientas de visualización como Looker Studio.
+Este proyecto desarrolla una arquitectura integral para evaluar el **riesgo crediticio** a partir de variables de buró de crédito, utilizando técnicas de machine learning avanzadas como **XGBoost** y un modelo **ensamble**, todo desplegado en un ecosistema basado en **AWS** y **BigQuery**. El resultado es un sistema escalable que permite predicciones automatizadas y visualización continua del riesgo mediante **Looker Studio**.
+
+
+## Objetivo del Proyecto
+
+Anticipar el **riesgo de incumplimiento crediticio** mediante modelos predictivos construidos sobre más de 180 variables de buró y comportamiento histórico. Esto permitirá a la institución:
+
+- Tomar mejores decisiones de originación.
+- Optimizar estrategias de cobranza.
+- Detectar tendencias de deterioro en el portafolio.
+- Visualizar el riesgo de forma dinámica y granular.
 
 
 # Estructura del Proyecto
@@ -11,6 +21,13 @@ Este proyecto implementa una arquitectura para analizar el riesgo crediticio uti
 ├── notebooks/ # Notebooks para exploración, entrenamiento y validación
 ├── src/ # Scripts Python para ETL y automatización
 └── README.md
+
+
+## Requisitos
+
+```bash
+pip install pandas boto3 scikit-learn xgboost joblib pandas-gbq google-auth
+```
 
 
 # Flujo del Proceso
@@ -23,7 +40,7 @@ La empresa inicialmente nos dio archivos csv que abarcan de enero 2022 a abril 2
 Para la actualización de nuevos meses este archivo debe colocarse en la carpeta data y realizar los siguientes pasos.
 
 
-## **Carga en S3** 
+## **Carga en AWS S3** 
 
 Se utiliza el script `cargar_bases.py`
 
@@ -81,25 +98,29 @@ Ejecuta lo siguiente:
 python predicciones.py
 ```
 
+## **Métrica de evaluación**: 
+
+Se utiliza la variable binaria Ever30@12M: indica si un cliente se atrasó 30 días en los 12 meses posteriores a la fecha de evaluación.
 
 
-https://lookerstudio.google.com/u/0/reporting/5793b497-7407-4b84-b391-28ff9c770300/page/p_7e4glbdwsd/edit
+## **Visualización de resultados**: 
+
+Los resultados se integran en BigQuery y se visualizan en un dashboard interactivo en Looker Studio.
 
 
+[🔗 Ver dashboard en Looker Studio](https://lookerstudio.google.com/u/0/reporting/5793b497-7407-4b84-b391-28ff9c770300/page/p_7e4glbdwsd/edit)
 
 
-## **Ensamble**: Se construye un modelo ensamble a partir de las predicciones individuales.
+# Acciones Prácticas del Modelo Ensamble
 
+1. Priorización de Originaciones de Crédito
+Selecciona clientes con menor riesgo en renovaciones u ofertas nuevas.
 
+2. Cobranza Diferenciada
+Permite diseñar estrategias según el riesgo anticipado de mora.
 
+3. Monitoreo del Portafolio
+Detecta cosechas deterioradas o segmentos de mayor exposición.
 
-## **Evaluación y Visualización**: Los resultados se integran en BigQuery y se visualizan en Looker Studio.
-
-
-
-## Requisitos
-
-```bash
-pip install pandas boto3 scikit-learn xgboost joblib pandas-gbq google-auth
-```
-
+4. Alertas Tempranas
+Proporciona predicciones mensuales para decisiones proactivas.
